@@ -51,7 +51,7 @@ function Nav() {
   return (
     <div>
       <NavContainer>
-        <NavTitle to="/"> BirdDex </NavTitle>
+        <NavTitle to="/birdex-redux"> BirdDex </NavTitle>
         {url == "/" ? (
           <AddSpeciesButton onClick={() => setOpen(!open)}>
             Add new species
