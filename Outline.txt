@@ -1,0 +1,34 @@
+NUMBER OF PAGES:
+1. HomePage --> Display all the species collection
+2. SingleSpecies --> Display the individual species and the birds collection under that species
+3. SingleBird --> Display the individual bird 
+
+NUMBER OF SLICES:
+1. SpeciesSlice 
+    --> Controls the state at the species level 
+    --> to access: state.aves.species
+    --> json file: SpeciesData.js
+2. BirsSlice 
+    --> Controls the state at the individual bird level
+    --> to access: state.aves.birds
+    --> json file: BirdsData.js
+
+
+FROM HOMEPAGE TO INDIVIDUAL SPECIES LEVEL:
+- HOMEPAGE > BANNER > SPECIESCONTAINER
+- In the Card JSX in SPECIESCONTAINER, to = {`/species/${family.id}`}
+- SINGLESPECIESPAGE --> shows that individual species that we clicked one
+- It will take a parameter call {match}
+- By calling, const {familyId} = match.params --> familyId is specified in App.js under the path name
+- We are passing the id of the species that we clicked on from the SPECIESCONTAINER to the SINGLESPECIESPAGE
+- We will then map through the state that contains the SPECIESDATA and find the id of the species that we clicked on and display tt
+
+FROM SINGLESPECIESPAGE TO INDIVIDUAL BIRDS (SINGLEBIRD) LEVEL:
+- SINGLESPECIESPAGE > MEMBERS
+- In the Card JSX in MEMBERS, to = {`/birds/${bird.id}`}
+- SINGLEBIRD --> shows that individual bird that we clicked one
+- SINGLEBIRD will take a parameter call {match}
+- By calling, const {birdId} = match.params --> birdId is specified in App.js under the path name
+- We are passing the id of the bird that we clicked on from the MEMBERS to the SINGLEBIRD
+- We will then map through the state that contains the BIRDSDATA and find the id of the bird that we clicked on and display it
+
