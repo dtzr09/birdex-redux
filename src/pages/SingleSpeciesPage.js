@@ -58,7 +58,7 @@ function SingleSpeciesPage({ match }) {
   // Delete species
   const handleDeleteClick = () => {
     dispatch(deleteSpecies({ name: currentspecies_name }));
-    history.push("/");
+    history.push("/birdex-redux");
   };
 
   // Updating species
@@ -117,7 +117,6 @@ function SingleSpeciesPage({ match }) {
       birdList.push(birds[k].name);
     }
   }
-  console.log(birdList);
 
   const CheckValid = () => {
     for (j = 0; j < birdList.length; j++) {
@@ -138,7 +137,6 @@ function SingleSpeciesPage({ match }) {
       }
     }
   };
-  console.log(birds);
 
   const HandleBird = () => {
     dispatch(
