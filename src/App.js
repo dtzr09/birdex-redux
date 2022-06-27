@@ -18,14 +18,22 @@ function App() {
   return (
     <Router history={customHistory}>
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/birdex-redux">
           <HomePage />
         </Route>
 
         {/* Only when u use this format component={} then the params can be pass down */}
-        <Route exact path="/species/:name" component={SingleSpeciesPage} />
+        <Route
+          exact
+          path="/species/:name"
+          component={SingleSpeciesPage}
+        />
 
-        <Route exact path="/birds/:name/:birdsid" component={SingleBird} />
+        <Route
+          exact
+          path="/birds/:name/:birdsid"
+          component={SingleBird}
+        />
 
         <Route
           exact

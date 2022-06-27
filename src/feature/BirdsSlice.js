@@ -22,7 +22,7 @@ const initialState = [
         created_at: "1/3/2000",
       },
     ],
-    img: "https://media.istockphoto.com/photos/eastern-bluebirds-male-and-female-picture-id183412466?k=20&m=183412466&s=612x612&w=0&h=xaDRkk-cq7jZglzGO-UTn8Y0tNMHqFBnI5-tIzM68c0=",
+    img: "https://www.allaboutbirds.org/guide/assets/photo/59858031-480px.jpg",
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const initialState = [
         created_at: "1/1/2000",
       },
     ],
-    img: "https://media.istockphoto.com/photos/eastern-bluebirds-male-and-female-picture-id183412466?k=20&m=183412466&s=612x612&w=0&h=xaDRkk-cq7jZglzGO-UTn8Y0tNMHqFBnI5-tIzM68c0=",
+    img: "https://www.allaboutbirds.org/guide/assets/photo/303441871-240px.jpg",
   },
   {
     id: 3,
@@ -50,7 +50,7 @@ const initialState = [
         created_at: "1/1/2000",
       },
     ],
-    img: "https://media.istockphoto.com/photos/eastern-bluebirds-male-and-female-picture-id183412466?k=20&m=183412466&s=612x612&w=0&h=xaDRkk-cq7jZglzGO-UTn8Y0tNMHqFBnI5-tIzM68c0=",
+    img: "https://www.allaboutbirds.org/guide/assets/photo/60412921-1280px.jpg",
   },
   {
     id: 4,
@@ -60,25 +60,11 @@ const initialState = [
     species: "American Robin",
     weights: [
       {
-        weight: "20",
+        weight: "25",
         created_at: "1/1/2000",
       },
     ],
-    img: "https://media.istockphoto.com/photos/eastern-bluebirds-male-and-female-picture-id183412466?k=20&m=183412466&s=612x612&w=0&h=xaDRkk-cq7jZglzGO-UTn8Y0tNMHqFBnI5-tIzM68c0=",
-  },
-  {
-    id: 5,
-    species_id: 4,
-    name: "Harry",
-    sex: "M",
-    species: "Crow",
-    weights: [
-      {
-        weight: "20",
-        created_at: "1/1/2000",
-      },
-    ],
-    img: "https://media.istockphoto.com/photos/eastern-bluebirds-male-and-female-picture-id183412466?k=20&m=183412466&s=612x612&w=0&h=xaDRkk-cq7jZglzGO-UTn8Y0tNMHqFBnI5-tIzM68c0=",
+    img: "https://www.allaboutbirds.org/guide/assets/photo/60412941-240px.jpg",
   },
 ];
 

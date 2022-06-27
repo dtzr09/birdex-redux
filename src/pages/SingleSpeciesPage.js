@@ -78,7 +78,7 @@ function SingleSpeciesPage({ match }) {
       setNewImg(currentspecies_img);
     } else {
       dispatch(updateSpecies(updatedSpecies));
-      // history.go(0);
+      history.go(0);
     }
   };
 
@@ -153,7 +153,7 @@ function SingleSpeciesPage({ match }) {
       })
     );
     setOpenBird(!openBird);
-    window.location.refresh();
+    history.go(0);
   };
 
   const HandleAddBird = () => {
