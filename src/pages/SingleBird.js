@@ -142,10 +142,7 @@ function SingleBird({ match }) {
                 Bar Chart
               </ChartChangeH1Bar>
             ) : (
-              <ChartChangeH1Line
-                LineActive
-                onClick={() => setLineActive(true)}
-              >
+              <ChartChangeH1Line LineActive onClick={() => setLineActive(true)}>
                 Line Chart
               </ChartChangeH1Line>
             )}
