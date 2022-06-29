@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Card, Container, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./SpeciesContainerStyle.css";
@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 function SpeciesContainer() {
   // pulling state from redux
   const species = useSelector((state) => state.species);
-  
+
   const data = species.map((family) => {
     return (
       <Card

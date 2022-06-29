@@ -6,9 +6,8 @@ import SpeciesContainer from "./SpeciesContainer/SpeciesContainer";
 import { useSelector } from "react-redux";
 
 function Hero() {
+  const species = useSelector((state) => state.species);
 
-  const species = useSelector((state) => state.species)
-  
   // Getting value from input search bar
   const [value, setValue] = useState("");
   const handleChange = (e) => {

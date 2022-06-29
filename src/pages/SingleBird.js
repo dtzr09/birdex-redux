@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router";
 import Nav from "../components/Navbar/Nav";
 import * as d3 from "d3";
@@ -47,7 +47,7 @@ function SingleBird({ match }) {
   for (i = 0; i < birds.length; i++) {
     if (
       birds[i].name === match.params.name &&
-      birds[i].id == match.params.birdsid
+      birds[i].id === match.params.birdsid
     ) {
       currentbird_img = birds[i].img;
       currentbird_name = birds[i].name;

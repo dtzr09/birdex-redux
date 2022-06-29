@@ -94,7 +94,7 @@ const birdsSlice = createSlice({
     deletebird: (state = initialState, action) => {
       let i;
       for (i = 0; i < state.length; i++) {
-        if (state[i].id == action.payload.id) {
+        if (state[i].id === action.payload.id) {
           state.splice(i, 1);
           i--;
         } else {

@@ -45,7 +45,7 @@ function SingleSpeciesPage({ match }) {
 
   // Matching the name on URL with name in the store
   for (i = 0; i < species.length; i++) {
-    if (species[i].name == currentspecies) {
+    if (species[i].name === currentspecies) {
       currentspecies_id = species[i].id;
       currentspecies_desc = species[i].description;
       currentspecies_img = species[i].img;
@@ -72,9 +72,9 @@ function SingleSpeciesPage({ match }) {
     img: Img,
   };
   const HandleUpdate = () => {
-    if (Description == "") {
+    if (Description === "") {
       setNewDescription(currentspecies_desc);
-    } else if (Img == "") {
+    } else if (Img === "") {
       setNewImg(currentspecies_img);
     } else {
       dispatch(updateSpecies(updatedSpecies));
@@ -84,9 +84,9 @@ function SingleSpeciesPage({ match }) {
 
   // //If description is null or img is null, set it to the previous value
   // const HandleUpdate = async() => {
-  //   if (Description == "" ){
+  //   if (Description === "" ){
   //     setNewDescription(family.speciesdesc)
-  //   } else if (Img == "") {
+  //   } else if (Img === "") {
   //     setNewImg(family.speciesimg)
   //   } else {
   //     onSubmitUpdate()
@@ -113,7 +113,7 @@ function SingleSpeciesPage({ match }) {
   let j, k;
   let birdList = [];
   for (k = 0; k < birds.length; k++) {
-    if (birds[k].species == currentspecies_name) {
+    if (birds[k].species === currentspecies_name) {
       birdList.push(birds[k].name);
     }
   }
@@ -121,11 +121,11 @@ function SingleSpeciesPage({ match }) {
   const CheckValid = () => {
     for (j = 0; j < birdList.length; j++) {
       if (
-        birdList[j] == BirdNameInput ||
-        BirdNameInput == "" ||
-        BirdImageInput == "" ||
-        weightInput == 0 ||
-        BirdSexInput.toUpperCase() != ("M" || "F")
+        birdList[j] === BirdNameInput ||
+        BirdNameInput === "" ||
+        BirdImageInput === "" ||
+        weightInput === 0 ||
+        BirdSexInput.toUpperCase() !== ("M" || "F")
       ) {
         setBirdName("");
         setBirdImage("");
@@ -155,13 +155,11 @@ function SingleSpeciesPage({ match }) {
   };
 
   const HandleAddBird = () => {
-    {
-      CheckValid()
-        ? HandleBird()
-        : alert(
-            "ERROR: Either bird name already exists, there are blank input fields or weight input is invalid."
-          );
-    }
+    CheckValid()
+      ? HandleBird()
+      : alert(
+          "ERROR: Either bird name already exists, there are blank input fields or weight input is invalid."
+        );
   };
 
   return (
@@ -185,9 +183,9 @@ function SingleSpeciesPage({ match }) {
           Add New Bird
         </button>
 
-        {currentspecies_id != null &&
-        currentspecies_name != null &&
-        currentspecies_img != null ? (
+        {currentspecies_id !== null &&
+        currentspecies_name !== null &&
+        currentspecies_img !== null ? (
           <Members id={currentspecies_id} />
         ) : null}
       </SingleSpeciesContainer>

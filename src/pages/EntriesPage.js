@@ -1,15 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Nav from "../components/Navbar/Nav";
-import {
-  Icon,
-  Menu,
-  Table,
-  Button,
-  Modal,
-  Input,
-  Dropdown,
-  TableCell,
-} from "semantic-ui-react";
+import { Icon, Button, Modal, Input, Dropdown } from "semantic-ui-react";
 import "./EntriesPageStyles.css";
 import { useHistory } from "react-router";
 import { useSelector } from "react-redux";
@@ -24,8 +15,8 @@ function EntriesPage({ match }) {
     const getBirdEntries = () => {
       allEntries.map((bird) => {
         if (
-          bird.name == match.params.birdName &&
-          bird.species == match.params.species_name
+          bird.name === match.params.birdName &&
+          bird.species === match.params.species_name
         ) {
           setcurrentEntries(bird.weights);
         }

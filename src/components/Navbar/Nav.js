@@ -3,7 +3,12 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Button, TextArea, Image, Modal, Input, Form } from "semantic-ui-react";
 import { addSpecies } from "../../feature/SpeciesSlice";
-import { NavContainer, NavTitle, AddSpeciesButton } from "./NavStyles";
+import {
+  NavContainer,
+  NavTitle,
+  AddSpeciesButton,
+  PlusIcon,
+} from "./NavStyles";
 
 function Nav() {
   const species = useSelector((state) => state.species);
@@ -20,7 +25,7 @@ function Nav() {
   let i = 0;
   const CheckExist = () => {
     for (i; i < species.length; i++) {
-      if (species[i].name == Nameinput) {
+      if (species[i].name === Nameinput) {
         setName("");
         setDescription("");
         setImage("");
@@ -42,9 +47,7 @@ function Nav() {
   };
 
   const AddSpecies = () => {
-    {
-      CheckExist() ? NewSpecies() : alert("Species Name Already Exists!");
-    }
+    CheckExist() ? NewSpecies() : alert("Species Name Already Exists!");
     setOpen(!open);
   };
 
@@ -52,10 +55,13 @@ function Nav() {
     <div>
       <NavContainer>
         <NavTitle to="/birdex-redux"> BirdDex </NavTitle>
-        {url == "/birdex-redux" ? (
-          <AddSpeciesButton onClick={() => setOpen(!open)}>
-            Add new species
-          </AddSpeciesButton>
+        {url === "/birdex-redux" ? (
+          <>
+            <AddSpeciesButton onClick={() => setOpen(!open)}>
+              Add new species
+            </AddSpeciesButton>
+            <PlusIcon onClick={() => setOpen(!open)}>+</PlusIcon>
+          </>
         ) : null}
       </NavContainer>
 

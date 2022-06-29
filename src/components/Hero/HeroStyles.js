@@ -6,12 +6,11 @@ export const HeroContainer = styled.div`
 
 export const HeroWrapper = styled.div`
   position: relative;
-  max-width: 1400px;
+  max-width: 100vw;
   max-height: 790px;
   z-index: 1;
-  overflow-y: scroll;
 `;
 
 export const BackgroundOverlay = styled.div`
   width: 100%;
-`
+`;

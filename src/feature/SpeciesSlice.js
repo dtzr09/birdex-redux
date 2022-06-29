@@ -56,7 +56,7 @@ const SpeciesSlice = createSlice({
     },
 
     deleteSpecies: (state = initialState, action) => {
-      return state.filter((birds) => birds.name != action.payload.name);
+      return state.filter((birds) => birds.name !== action.payload.name);
     },
 
     updateSpecies: (state = initialState, action) => {

@@ -9,7 +9,7 @@ function Members(params) {
 
   //MUST INCLUDE RETURN IF NOT NTH WILL BE SHOWN
   const data = birds.map((bird) => {
-    if (bird.species_id == params.id) {
+    if (bird.species_id === params.id) {
       return (
         <Card
           className="Card--birdStyle"
