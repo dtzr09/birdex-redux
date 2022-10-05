@@ -69,12 +69,27 @@ const initialState = [
 ];
 
 const entriesSlice = createSlice({
-  name: "birds",
+  name: "entries",
   initialState,
-  reducers: {},
+  reducers: {
+    addWeights: (state = initialState, action) => {
+      const newWeight = {
+        weight: action.payload.weight.toString(),
+        created_at: new Date(Date.now()).toLocaleString().split(",")[0],
+      };
+      state.map((entry) => {
+        if (
+          action.payload.species_name == entry.species &&
+          action.payload.name == entry.name
+        ) {
+          entry.weights.push(newWeight);
+        }
+      });
+    },
+  },
 });
 
-// export const {  } = entriesSlice.actions;
+export const { addWeights } = entriesSlice.actions;
 
 //export posts reducer function so that it can be imported into store.js
 export default entriesSlice.reducer;

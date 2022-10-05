@@ -88,7 +88,6 @@ const birdsSlice = createSlice({
         img: action.payload.img,
       };
       state.push(newBird);
-      console.log(current(state));
     },
 
     deletebird: (state = initialState, action) => {

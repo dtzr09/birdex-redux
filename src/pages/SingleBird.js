@@ -47,7 +47,7 @@ function SingleBird({ match }) {
   for (i = 0; i < birds.length; i++) {
     if (
       birds[i].name === match.params.name &&
-      birds[i].id === match.params.birdsid
+      birds[i].id == match.params.birdsid
     ) {
       currentbird_img = birds[i].img;
       currentbird_name = birds[i].name;
@@ -96,9 +96,7 @@ function SingleBird({ match }) {
   return (
     <SingleBirdPageWrapper>
       <Nav />
-
       <DeleteBird onClick={deleteBird}> Delete Bird </DeleteBird>
-
       <SingleBirdContainer key={currentbird_id}>
         <SingleBirdWrapper>
           <ImageWrapper>

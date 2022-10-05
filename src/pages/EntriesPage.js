@@ -3,13 +3,16 @@ import Nav from "../components/Navbar/Nav";
 import { Icon, Button, Modal, Input, Dropdown } from "semantic-ui-react";
 import "./EntriesPageStyles.css";
 import { useHistory } from "react-router";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addWeights } from "../feature/EntriesSlice";
 
 function EntriesPage({ match }) {
-  //TODO GET FROM ENTRIES SLICE
-  //CRUD SYSTEM ON ENTRIES SLICE
   const allEntries = useSelector((state) => state.birds);
   const [currentEntries, setcurrentEntries] = useState();
+  const dispatch = useDispatch();
+
+  const ts = new Date();
+  const history = useHistory();
 
   useEffect(() => {
     const getBirdEntries = () => {
@@ -26,28 +29,31 @@ function EntriesPage({ match }) {
     getBirdEntries();
   }, []);
 
-  const data = match.params;
-  const ts = new Date();
-  const history = useHistory();
-
   //State of modal that adds new entry
   const [open, setOpen] = useState(false);
-  const [weightinput, setWeight] = useState(0);
+  const [weightInput, setWeight] = useState(0);
   const currentDate =
     ts.toLocaleDateString("en-US") + " " + ts.toLocaleTimeString("en-US");
 
   //State of modal that updates entry
   const [open2, setOpen2] = useState(false);
   const [newWeight, setnewWeight] = useState("");
-  const [editId, seteditId] = useState("");
 
-  //Server to add new entries
-  const newEntries = async (e) => {
-    if (weightinput <= 0) {
+  //Function to add new entries
+  const newEntries = async () => {
+    if (weightInput <= 0) {
       alert("Incorrect Weight Value!");
       setWeight(0);
     } else {
-      //create entry
+      dispatch(
+        addWeights({
+          weight: weightInput,
+          species_name: match.params.species_name,
+          name: match.params.birdName,
+        })
+      );
+      console.log(currentEntries);
+      // history.go(0);
     }
   };
 
@@ -95,7 +101,7 @@ function EntriesPage({ match }) {
                   <Icon
                     className="edit-button"
                     name="edit"
-                    size="m"
+                    size="large"
                     color="green"
                     style={{ cursor: "pointer" }}
                   />
@@ -104,7 +110,7 @@ function EntriesPage({ match }) {
                   <Icon
                     className="delete-button"
                     name="delete"
-                    size="m"
+                    size="large"
                     color="red"
                     style={{ cursor: "pointer" }}
                   />
@@ -139,7 +145,7 @@ function EntriesPage({ match }) {
               label={<Dropdown defaultValue="int" options={options} />}
               labelPosition="right"
               placeholder="Enter weight"
-              value={weightinput}
+              value={weightInput}
               onChange={(e) => setWeight(e.target.value)}
             />
           </Modal.Description>
