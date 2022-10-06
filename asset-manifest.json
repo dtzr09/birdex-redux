@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/birdex-redux/static/css/main.9ced6079.chunk.css",
-    "main.js": "/birdex-redux/static/js/main.2fc471da.chunk.js",
-    "main.js.map": "/birdex-redux/static/js/main.2fc471da.chunk.js.map",
+    "main.js": "/birdex-redux/static/js/main.dc55004d.chunk.js",
+    "main.js.map": "/birdex-redux/static/js/main.dc55004d.chunk.js.map",
     "runtime-main.js": "/birdex-redux/static/js/runtime-main.c9502124.js",
     "runtime-main.js.map": "/birdex-redux/static/js/runtime-main.c9502124.js.map",
     "static/css/2.3a9f8fdf.chunk.css": "/birdex-redux/static/css/2.3a9f8fdf.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.3a9f8fdf.chunk.css",
     "static/js/2.84344164.chunk.js",
     "static/css/main.9ced6079.chunk.css",
-    "static/js/main.2fc471da.chunk.js"
+    "static/js/main.dc55004d.chunk.js"
   ]
 }
